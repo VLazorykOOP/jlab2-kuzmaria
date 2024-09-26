@@ -38,26 +38,26 @@ public class Parallelogram {
     }
 
     // Метод для порівняння з іншим паралелограмом за площею
-    public int compareArea(Parallelogram other) {
+    public int compareArea(Parallelogram other) {    //Порівнює площу поточного об'єкта з площею переданого об'єкта other
         return Double.compare(this.calculateArea(), other.calculateArea());
     }
 
     // Метод для перевірки подібності до іншого паралелограма
-    public boolean isSimilar(Parallelogram other) {
+    public boolean isSimilar(Parallelogram other) {   //Перевіряє, чи два паралелограми подібні, тобто чи співвідношення їхніх сторін однакове та кути однакові.
         double ratioA = this.sideA / other.sideA;
         double ratioB = this.sideB / other.sideB;
         return Double.compare(ratioA, ratioB) == 0 && Double.compare(this.angle, other.angle) == 0;
     }
 
     // Перевантажений метод toString для форматованого виводу
-    @Override
+    @Override //@Override в Java використовується для того, щоб вказати, що метод в класі є перевантаженим варіантом методу, що вже існує в батьківському класі або в інтерфейсі.
     public String toString() {
-        return String.format("Паралелограм [Сторона A: %.2f, Сторона B: %.2f, Кут: %.2f градусів]", sideA, sideB, angle);
+        return String.format("Паралелограм [Сторона A: %.2f, Сторона B: %.2f, Кут: %.2f градусів]", sideA, sideB, angle); //Використовується форматування рядка, щоб відобразити значення сторін і кута.
     }
 
     // Перевантажений метод equals для порівняння об'єктів
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {  //Порівнює поточний об'єкт з іншим об'єктом o на рівність.
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Parallelogram that = (Parallelogram) o;
@@ -66,7 +66,7 @@ public class Parallelogram {
                 Double.compare(that.angle, angle) == 0;
     }
 
-    @Override
+    @Override //@Override в Java використовується для того, щоб вказати, що метод в класі є перевантаженим варіантом методу, що вже існує в батьківському класі або в інтерфейсі. 
     public int hashCode() {
         return Objects.hash(sideA, sideB, angle);
     }
