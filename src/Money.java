@@ -80,7 +80,7 @@ public class Money {
     }
 
     // Перевантажений метод toString для виведення суми в гривнях
-
+@Override
     public String toString() {
         // Обчислення загальної суми в гривнях
         int totalUah = ones + 
